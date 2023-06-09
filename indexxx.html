@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="marca.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marcas</title>
+</head>
+<body> 
+    <div class="container">
+
+    <div class="box">
+
+    <h2> ESCOLHA SEU PRODUTO </h2>
+        
+    <div class="form-group">
+    <td>
+        <label for="produto"> Produto: </label>
+    </td>
+    <td>
+        <input type="text" name="cidade">
+    </td>
+<br>
+<br>
+
+    <td>
+        <label for="marcas"> Marca: </label>
+    </td>
+        <select name="marcas">      
+        <option value=""> Selecione </option>
+        <option value="ct"> Catier</option>
+        <option value="mc"> Monte Carlo</option>
+        <option value="pt"> Pandora</option>
+        <option value="tf"> Tiffany</option>
+        <option value="vr"> Vivara</option>
+        </select>
+    </td>
+<br>
+<br>
+    <td>
+        <label for="preco_custo"> Preço de custo: </label>
+    </td>
+    <td>
+        <input type="number" name="preco_custo">
+    </td>
+<br>
+<br>
+    <td>
+        <label for="percentual_lucro"> Percentual de lucro: </label>
+    </td>
+    <td>
+        <input type="number" name="percentual_lucro">
+    </td>
+<br>
+<br>
+    <td>
+        <label for="preco_venda"> Valor da venda: </label>
+    </td>
+    <td>
+        <input type="number" name="preco_venda">
+    </td>
+<br>
+<br>
+    <td>
+        <label for="quantidade"> Quantidade: </label>
+    </td>
+    <td>
+        <input type="number" name="quantidade">
+    </td>
+<br>
+<br>
+    <td>
+        <label for="imagem"> Imagem: </label>
+    </td>
+    <td>
+        <input type="file" name="imagem">
+    </td>
+<br>
+<br> 
+</div>
+
+<button id="botao" onclick="mudarCor()"> Mudar cor </button>
+<script src="java"> </script>
+
+
+
+<button> Cadastrar </button>
+
+<script>
+      function calcular()
+      {
+        let preco_custo = document.getElementById ("preco_custo").value;
+        let percentual_lucro = document.getElementById ("percentual_lucro").value;
+        let preco_venda = document.getElementById ("preco_venda").value;
+        preco_venda= parseFloat (preco_custo)+(preco_custo*(percentual_lucro/100));
+        console.log("preco_custo");
+        console.log("percentual_lucro");
+        console.log("preco_venda");
+        document.getElementById("preco_venda").value = preco_venda;
+      }
+
+
+      function Cadastrar()
+      {
+        let imagem = document.getElementById("imagem").value;
+        let Produto = document.getElementById("produto").value;
+        let marca = document.getElementById("marca").value;
+        let preco_venda = document.getElementById("preco_venda").value;
+
+        let div = document.createElement("div");
+        let ima= document.createElement("h2")
+        let prod= document.createElement("h2")
+        let mar= document.createElement("h2")
+        let vend= document.createElement("h2")
+        ima.innerHTML=imagem;
+        prod.innerHTML = produto;
+        mar.innerHTML=marca;
+        vend.innerHTML = preco_venda;
+        div.appendChild(ima);
+        div.appendChild(prod);
+        div.appendChild(mar);
+        div.appendChild(vend);
+        document.body.appendChild("div")
+        document.getElementById("imagem").value="";
+        document.getElementById("produto").value="";
+        document.getElementById("marca").value="";
+        document.getElementById("preco_venda").value="";
+      }
+    </script>
+
+</body>
+</html>
